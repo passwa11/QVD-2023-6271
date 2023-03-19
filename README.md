@@ -1,10 +1,10 @@
 #### Vuln Impact 
 
-An issue has been discovered in Nacos affecting Nacos <= 2.1.0.Nacos users use the default JWT key to cause an unauthorized access vulnerability. Through this vulnerability, attackers can bypass user name and password authentication and directly log in to the Nacos user
+An issue has been discovered in Nacos affecting Nacos <= 2.2.0.Nacos users use the default JWT key to cause an unauthorized access vulnerability. Through this vulnerability, attackers can bypass user name and password authentication and directly log in to the Nacos user
 
 #### Vuln Product
 
-Nacos <= 2.1.0 version
+Nacos <= 2.2.0 version
 
 #### Vulnerability reappearance
 
@@ -40,3 +40,7 @@ Step 4: Log in successfully after releasing the data packet.
 ![success](img/success.png)
 
 
+### LINK
+- https://github.com/Pizz33/nacos_vul
+- https://github.com/atk7r/Nacos-Authentication-Bypass-Poc
+- https://github.com/Al1ex/Alibab-Nacos-Unauthorized-Login
